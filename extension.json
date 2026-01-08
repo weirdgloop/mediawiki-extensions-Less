@@ -12,29 +12,40 @@
 	"requires": {
 		"MediaWiki": ">= 1.45.0"
 	},
-	"AutoloadClasses": {
-		"LessIntegrationContent": "includes/LessIntegrationContent.php",
-		"LessIntegrationContentHandler": "includes/LessIntegrationContentHandler.php",
-		"LessIntegrationHooks": "includes/LessIntegrationHooks.php"
-	},
 	"ContentHandlers": {
-		"less": "LessIntegrationContentHandler"
+		"less": {
+			"class": "MediaWiki\\Extension\\Less\\ContentHandler"
+		}
+	},
+	"HookHandlers": {
+		"codeeditor": {
+			"class": "MediaWiki\\Extension\\Less\\CodeEditorHooks",
+			"services": [
+				"MainConfig"
+			]
+		},
+		"codemirror": {
+			"class": "MediaWiki\\Extension\\Less\\CodeMirrorHooks",
+			"services": [
+				"MainConfig"
+			]
+		},
+		"main": {
+			"class": "MediaWiki\\Extension\\Less\\Hooks"
+		}
 	},
 	"Hooks": {
-		"CodeEditorGetPageLanguage": [
-			"LessIntegrationHooks::onCodeEditorGetPageLanguage"
-		],
-		"ContentHandlerDefaultModelFor": [
-			"LessIntegrationHooks::onContentHandlerDefaultModelFor"
-		]
-	},
-	"SyntaxHighlightModels": {
-		"less": "less"
+		"CodeEditorGetPageLanguage": "codeeditor",
+		"CodeMirrorGetMode": "codemirror",
+		"ContentHandlerDefaultModelFor": "main"
 	},
 	"MessagesDirs": {
 		"less": [
 			"i18n"
 		]
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\Less\\": "includes/"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "modules",
@@ -65,5 +76,22 @@
 			]
 		}
 	},
-	"manifest_version": 1
+	"attributes": {
+		"SyntaxHighlight": {
+			"Models": {
+				"less": "less"
+			}
+		}
+	},
+	"config": {
+		"LessUseCodeEditor": {
+			"value": true,
+			"description": "Use CodeEditor for editing Less pages."
+		},
+		"LessUseCodeMirror": {
+			"value": false,
+			"description": "Use CodeMirror for editing Less pages."
+		}
+	},
+	"manifest_version": 2
 }
