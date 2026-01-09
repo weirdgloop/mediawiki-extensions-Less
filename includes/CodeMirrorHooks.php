@@ -21,7 +21,7 @@ class CodeMirrorHooks implements CodeMirrorGetModeHook {
 	 * @return bool True to continue or false to abort
 	 */
 	public function onCodeMirrorGetMode( Title $title, ?string &$mode, string $model ): bool {
-		if ( $this->$useCodeMirror && $model === 'less' ) {
+		if ( $this->useCodeMirror && $model === 'less' ) {
 			$mode = 'less';
 			return false;
 		}
