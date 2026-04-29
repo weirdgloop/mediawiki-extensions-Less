@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+            "Magiczocker"
+        ]
+	},
+	"less-desc": "Unterstützt die Verwaltung von Website-Stilen mithilfe von LESS",
+	"less-update-css": "CSS Aktualisieren",
+    "less-dialog-title": "LESS Kompilieren",
+    "less-dialog-close": "Schließen",
+    "less-dialog-debug-enabled": "Debug-Modus aktiviert",
+    "less-dialog-getting-source": "Quelldatei laden: [[$1]]",
+    "less-dialog-getting-mixins": "Standard-Mixins laden",
+    "less-dialog-attempt-parse": "Versuche LESS zu alalysieren",
+    "less-dialog-import-success": "[[$1]] erfolgreich importiert",
+    "less-dialog-import-error": "Fehler beim importieren von [[$1]]",
+    "less-dialog-formatting-css": "CSS formatieren",
+    "less-dialog-getting-header": "Kopfzeilenkommentar laden",
+    "less-dialog-edit-success": "[[$1]] erfolgreich aktualisiert",
+    "less-dialog-edit-summary": "Aktualisiere CSS aus [[$1]]",
+    "less-dialog-internal-error": "Interner Fehler",
+    "less-dialog-page-not-found": "Seite nicht gefunden. Bitte überprüfe deine Einstellungen.",
+    "less-dialog-check-imports": "Eine oder mehrere Dateien konnten nicht importiert werden. Bitte überprüfe ob alle im @import festgelegten Seiten existieren.",
+    "less-dialog-parse-error-file": "Fehler in Zeile $1 in [[$2]]",
+    "less-dialog-unknown-error": "Ein unbekannter Fehler ist aufgetreten",
+    "less-dialog-error-persist": "Falls dieser Fehler weiterhin besteht, melde ihn bitte [[$1|hier]]"
+}
